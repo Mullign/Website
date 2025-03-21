@@ -39,7 +39,7 @@ const Footer = () => {
       alt: "John Russell - Instagram",
     },
     {
-      href: "www.linkedin.com/in/john-russell-61a530220",
+      href: "https://www.linkedin.com/in/john-russell-61a530220",
       image: "/LinkedIn.svg",
       alt: "John Russell - LinkedIn",
     },

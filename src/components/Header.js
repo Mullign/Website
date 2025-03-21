@@ -39,7 +39,7 @@ const GlowingButton = () => {
 
   return (
     <Link
-      href="mailto:mulligansmac@gmail.com"
+      href="mailto:johnrussell@mull1gan.com"
       className="relative group glow-button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -116,7 +116,7 @@ const Header = () => {
             className="text-white/90 hover:text-white transition-colors duration-300 flex items-center gap-2"
           >
             <span className="text-lg font-medium">
-              JOHNR<span className="text-blue-400">.</span>
+              JOHN R<span className="text-blue-400">.</span>
             </span>
           </Link>
           <div className="flex items-center gap-4">

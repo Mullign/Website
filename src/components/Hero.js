@@ -115,14 +115,13 @@ const CodeSnippets = () => (
 
 const Hero = () => {
   const taglines = [
-    "Bridging COnstruction Precision with Tech Inovation",
+    "Bridging Construction Precision with Tech Inovation",
     "Restoring Stadiums by day, building digital solutions by night",
     "Grounded in Construstions, driven by technology",
     "Creating Mobile Excellence",
     "Building Apps People Love",
     "Value Driven, Tech-inspired",
     "From hard hats to hard drives",
-    "Native Apps, Seamless Experiences",
   ];
 
   return (

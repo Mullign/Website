@@ -4,7 +4,7 @@ export const metadata = {
   metadataBase: new URL(baseUrl || "https://mull1gan.com"),
   title: {
     default: "JohnRussell | Mobile App Developer - React Native & iOS",
-    template: "%s | JohnRussell",
+    template: "%s | John Russell",
   },
   description:
     "Mobile app developer specializing in React Native and iOS development. Creating seamless mobile experiences with beautiful design and stellar performance.",
@@ -26,10 +26,10 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: baseUrl,
-    title: "John Russell | Mobile App Developer - React Native & iOS",
+    url: baseUrl, 
+    title: "John Russell | Software Developer - React Native & iOS",
     description:
-      "Mobile app developer specializing in React Native and iOS development. Creating seamless mobile experiences with beautiful design and stellar performance.",
+      "Mobile app and software developer specializing in React Native and iOS development. Creating seamless mobile experiences with beautiful design and stellar performance.",
     siteName: "John Russell",
     images: [
       {
