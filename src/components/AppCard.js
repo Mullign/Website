@@ -137,7 +137,7 @@ const AppCard = () => {
       title: "Do Better Everyday ",
       description:
         "Things that make you happy",
-      logo: "/nearbylogo.jpg",
+      logo: "/image.png",
       playStore:
         "https://Mull1gan.com",
       website:
