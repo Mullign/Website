@@ -129,7 +129,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Anwer Solangi - [@mull1ganR](https://x.com/mull1ganR)
 
-Project Link: [https://github.com/anwersolangi/Devfolio](https://github.com/anwersolangi/Devfolio)
 
 ## 🙏 Acknowledgments
 
