@@ -13,12 +13,13 @@ const About = () => (
           learn how things where built to learn how to build my own apps and software.
         </p>
         <p className="text-gray-300/90">
-          Welcome! I'm John Russell, a project manager with a backround in construction 
-          and a passion for techcnology. I thrive on blending practical project experience 
-          with a lifelong interst in computers, software, and inovation. Currently 
-          pursuing my Master's in Computer Science at Clemson University. Im focused on
-          transitioning into the tech industy to create impactful solutions. Always learning,
-          always building.
+        Results-driven Project Manager with a strong passion for technology, cybersecurity, 
+        and IT systems. Currently enrolled in Clemson's Master of Computer Science program 
+        and holds Google's Cybersecurity Certificate, demonstrating a commitment to transitioning 
+        into the tech industry. Skilled in overseeing complex projects, integrating digital solutions,
+         and implementing computer systems for businesses. Adept at problem-solving, risk management, 
+         and information security, with a proactive and analytical approach. Seeking to leverage project 
+         management expertise and technical knowledge in a professional IT-focused role.
         </p>
       </div>
     </div>
