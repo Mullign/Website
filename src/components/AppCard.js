@@ -101,7 +101,7 @@ const Item = ({
               <StoreButton
                 href={playStore}
                 icon={PlayStoreIcon}
-                label="Google Play"
+                label="Git Hub File"
                 isStore={true}
               />
             )}
@@ -139,9 +139,9 @@ const AppCard = () => {
         "Things that make you happy",
       logo: "/image.png",
       playStore:
-        "https://Mull1gan.com",
+        "https://github.com/Mullign/Better-yourself",
       website:
-        "https://Mull1gan.com",
+        "https://github.com/Mullign/Better-yourself",
     },
   ];
 
