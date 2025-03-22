@@ -21,8 +21,8 @@ const Background = () => {
             radial-gradient(
               circle at center,
               transparent 15%,
-              #3b82f620 35%,
-              #6366f120 45%,
+rgba(187, 59, 246, 0.13) 35%,
+rgba(220, 99, 241, 0.13) 45%,
               transparent 65%
             )
           `,
