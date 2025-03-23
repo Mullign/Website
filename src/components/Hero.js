@@ -201,7 +201,7 @@ const Hero = () => {
           <p className="text-lg text-gray-300/90 max-w-2xl mx-auto mb-8 leading-relaxed">
           Welcome! I'm John Russell, a project manager with a backround in construction 
           and a passion for techcnology. I thrive on blending practical project experience 
-          with a lifelong passion for computers, software, and innovation.. Currently 
+          with a lifelong passion for computers, software, and innovation. Currently 
           pursuing my Master's in Computer Science at Clemson University. I am focused on
           transitioning into the tech industy to create impactful solutions. Always learning,
           always building.
