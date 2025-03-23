@@ -184,7 +184,7 @@ const Hero = () => {
               className="animate-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-300% bg-clip-text text-transparent 
                            hover:animate-gradient-fast cursor-pointer transition-all duration-300 hover:scale-105"
             >
-              John Russell IV
+              John Russell 
             </span>
             <span className="ml-4 inline-flex items-center">
               <Sparkles className="w-8 h-8 text-blue-400 animate-sparkle" />
@@ -202,7 +202,7 @@ const Hero = () => {
           Welcome! I'm John Russell, a project manager with a backround in construction 
           and a passion for techcnology. I thrive on blending practical project experience 
           with a lifelong passion for computers, software, and innovation.. Currently 
-          pursuing my Master's in Computer Science at Clemson University. Im focused on
+          pursuing my Master's in Computer Science at Clemson University. I am focused on
           transitioning into the tech industy to create impactful solutions. Always learning,
           always building.
           </p>

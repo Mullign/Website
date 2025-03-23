@@ -27,7 +27,7 @@ const Experience = () => {
       company: "Coon Restoration and Sealants",
       period: "2023 - Present",
       description:
-        "Oversee project management for the Progressive Field lower and upper bowl restoration. Conduct detailed takeoffs for both restoration and new construction projects. Collaborate with clients to evaluate project feasibility and scope of work. Develop and present comprehensive bid packages, estimating labor and material costs. Coordinate the procurement of materials and machinery to meet project deadlines. Lead projects from planning to execution, ensuring efficiency and adherence to specifications. Participate in pre-bid meetings and bid openings to support business development.Enforce safety protocols and regulatory compliance on all job sites."
+        "Oversee project management for the Progressive Field lower and upper bowl restoration. Conduct detailed takeoffs for both restoration and new construction projects. Collaborate with clients to evaluate project feasibility and scope of work. Develop and present comprehensive bid packages, estimating labor and material costs. Coordinate the procurement of materials and machinery to meet project deadlines. Lead projects from planning to execution, ensuring efficiency and adherence to specifications. Participate in pre-bid meetings and bid openings to support business development. Enforce safety protocols and regulatory compliance on all job sites."
     },
     {
       title: "System Admin",
