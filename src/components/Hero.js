@@ -117,7 +117,7 @@ const Hero = () => {
   const taglines = [
     "Bridging Construction Precision with Tech Inovation",
     "Restoring Stadiums by day, building digital solutions by night",
-    "Grounded in Construstions, driven by technology",
+    "Grounded in Construstion, driven by technology",
     "Creating Mobile Excellence",
     "Building Apps People Love",
     "Value Driven, Tech-inspired",
