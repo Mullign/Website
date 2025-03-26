@@ -10,7 +10,7 @@ const About = () => (
         <p className="text-gray-300/90">
           I&apos;m a self-taught software developer with a passion for mobile
           development. My journey in programming started with a curiosity to
-          learn how things where built to learn how to build my own apps and software.
+          learn how things were built to learn how to build my own apps and software.
         </p>
         <p className="text-gray-300/90">
         Results-driven Project Manager with a strong passion for technology, cybersecurity, 
