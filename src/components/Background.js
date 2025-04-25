@@ -21,8 +21,8 @@ const Background = () => {
             radial-gradient(
               circle at center,
               transparent 15%,
-              #cb45ed 35%,
-              #bb63f1 45%,
+rgba(187, 59, 246, 0.13) 35%,
+rgba(220, 99, 241, 0.13) 45%,
               transparent 65%
             )
           `,
@@ -34,8 +34,8 @@ const Background = () => {
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(172, 99, 241, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(172, 99, 241, 0.03) 1px, transparent 1px)
+            linear-gradient(to right, rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(99, 102, 241, 0.03) 1px, transparent 1px)
           `,
           backgroundSize: "clamp(30px, 5vw, 60px) clamp(30px, 5vw, 60px)",
         }}
@@ -53,7 +53,7 @@ const Background = () => {
               className="w-[clamp(200px,30vw,256px)] h-[clamp(125px,20vw,160px)] rounded-lg border-2 border-blue-500/50 backdrop-blur-sm"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(171, 59, 246, 0.1), transparent)",
+                  "linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent)",
               }}
             >
               <div className="p-4 space-y-2">
@@ -78,7 +78,7 @@ const Background = () => {
             className="w-[clamp(80px,15vw,96px)] h-[clamp(140px,25vw,192px)] rounded-[24px] border-2 border-blue-500/50 p-3 backdrop-blur-sm"
             style={{
               background:
-                "linear-gradient(135deg, rgba(171, 59, 246, 0.1), transparent)",
+                "linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent)",
             }}
           >
             <div className="w-1/2 h-1 mx-auto bg-blue-500/50 rounded-full" />
@@ -95,7 +95,7 @@ const Background = () => {
             className="w-[clamp(80px,15vw,96px)] h-[clamp(140px,25vw,192px)] rounded-[18px] border-2 border-blue-500/50 p-3 backdrop-blur-sm"
             style={{
               background:
-                "linear-gradient(135deg, rgba(172, 99, 241, 0.1), transparent)",
+                "linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent)",
             }}
           >
             <div className="w-1.5 h-1.5 ml-2 bg-blue-500/50 rounded-full" />
@@ -115,7 +115,7 @@ const Background = () => {
             className="w-[clamp(160px,20vw,192px)] h-[clamp(200px,30vw,256px)] rounded-[24px] border-2 border-blue-500/50 p-4 backdrop-blur-sm"
             style={{
               background:
-                "linear-gradient(135deg, rgba(172, 99, 241, 0.1), transparent)",
+                "linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent)",
             }}
           >
             <div className="mt-4 space-y-3">
@@ -145,14 +145,14 @@ const Background = () => {
           className="absolute top-[30%] left-0 right-0 h-px opacity-20"
           style={{
             background:
-              "linear-gradient(to right, transparent,rgb(171, 59, 246), transparent)",
+              "linear-gradient(to right, transparent, #3b82f6, transparent)",
           }}
         />
         <div
           className="absolute top-0 bottom-0 md:right-[25%] right-[15%] w-px opacity-20"
           style={{
             background:
-              "linear-gradient(to bottom, transparent,rgb(170, 99, 241), transparent)",
+              "linear-gradient(to bottom, transparent, #6366f1, transparent)",
           }}
         />
       </div>
@@ -162,7 +162,7 @@ const Background = () => {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, transparent, rgba(17, 3, 17, 0.5))",
+            "radial-gradient(circle at 50% 50%, transparent, rgba(3, 7, 17, 0.5))",
         }}
       />
       <div
