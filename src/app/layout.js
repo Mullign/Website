@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/next"
 import localFont from "next/font/local";
 import "./globals.css";
 import Background from "@/components/Background";
