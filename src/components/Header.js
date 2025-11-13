@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Mail, ChevronRight } from "lucide-react";
+import { Mail, ChevronRight, FileText } from "lucide-react";
 
 const GlowingButton = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -83,6 +83,88 @@ const GlowingButton = () => {
   );
 };
 
+const ResumeButton = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Update button position on mount and window resize
+  useEffect(() => {
+    const button = document.querySelector(".resume-button");
+    if (button) {
+      const rect = button.getBoundingClientRect();
+      setButtonPosition({ x: rect.left, y: rect.top });
+    }
+
+    const handleResize = () => {
+      const button = document.querySelector(".resume-button");
+      if (button) {
+        const rect = button.getBoundingClientRect();
+        setButtonPosition({ x: rect.left, y: rect.top });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Handle mouse move for glow effect
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <Link
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative group resume-button"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Gradient background with glow */}
+      <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-70 blur-md group-hover:opacity-100 animate-pulse transition-opacity duration-500" />
+
+      {/* Glow effect */}
+      {isHovered && (
+        <div
+          className="absolute inset-0 rounded-full opacity-60 blur-2xl transition-opacity duration-500"
+          style={{
+            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.3), transparent 50%)`,
+          }}
+        />
+      )}
+
+      {/* Button content */}
+      <div className="relative px-5 py-2.5 bg-white/80 backdrop-blur-md rounded-full border border-blue-500/30 shadow-sm flex items-center gap-2 group-hover:border-blue-500/50 group-hover:bg-white transition-colors duration-500">
+        <FileText
+          size={16}
+          className="text-blue-600 group-hover:text-blue-700 transition-colors duration-300"
+        />
+        <span className="text-sm font-medium bg-gradient-to-r from-gray-800 to-gray-900 text-transparent bg-clip-text group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300">
+          Resume
+        </span>
+        <ChevronRight
+          size={16}
+          className="text-blue-600/70 group-hover:text-blue-700 group-hover:translate-x-0.5 transition-all duration-300"
+        />
+
+        {/* Shine effect */}
+        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 rotate-180 overflow-hidden rounded-full">
+            <div className="absolute top-1/2 left-0 h-[300%] w-[50%] -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent transform -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -120,6 +202,7 @@ const Header = () => {
             </span>
           </Link>
           <div className="flex items-center gap-4">
+            <ResumeButton />
             <GlowingButton />
           </div>
         </div>
