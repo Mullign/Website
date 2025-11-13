@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import AppCard from "@/components/AppCard";
 import Footer from "@/components/Footer";
@@ -10,6 +12,8 @@ const Portfolio = () => (
     <Header />
     <Hero />
     <About />
+    <Education />
+    <Skills />
     <Experience />
     <AppCard />
     <Footer />

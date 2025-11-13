@@ -2,7 +2,7 @@ import React from "react";
 
 const Background = () => {
   return (
-    <div className="fixed inset-0 bg-[#030711] overflow-hidden">
+    <div className="fixed inset-0 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20 overflow-hidden">
       {/* Noise texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.15]"
@@ -162,19 +162,19 @@ rgba(220, 99, 241, 0.13) 45%,
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, transparent, rgba(3, 7, 17, 0.5))",
+            "radial-gradient(circle at 50% 50%, transparent, rgba(248, 250, 252, 0.3))",
         }}
       />
       <div
         className="absolute top-0 left-0 right-0 h-32"
         style={{
-          background: "linear-gradient(to bottom, #030711, transparent)",
+          background: "linear-gradient(to bottom, rgba(248, 250, 252, 0.8), transparent)",
         }}
       />
       <div
         className="absolute bottom-0 left-0 right-0 h-32"
         style={{
-          background: "linear-gradient(to top, #030711, transparent)",
+          background: "linear-gradient(to top, rgba(248, 250, 252, 0.8), transparent)",
         }}
       />
     </div>

@@ -59,17 +59,17 @@ const GlowingButton = () => {
       )}
 
       {/* Button content */}
-      <div className="relative px-5 py-2.5 bg-gray-900 rounded-full border border-blue-500/20 flex items-center gap-2 group-hover:border-blue-500/50 transition-colors duration-500">
+      <div className="relative px-5 py-2.5 bg-white/80 backdrop-blur-md rounded-full border border-blue-500/30 shadow-sm flex items-center gap-2 group-hover:border-blue-500/50 group-hover:bg-white transition-colors duration-500">
         <Mail
           size={16}
-          className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300"
+          className="text-blue-600 group-hover:text-blue-700 transition-colors duration-300"
         />
-        <span className="text-sm font-medium bg-gradient-to-r from-gray-100 to-gray-300 text-transparent bg-clip-text group-hover:from-white group-hover:to-blue-100 transition-all duration-300">
+        <span className="text-sm font-medium bg-gradient-to-r from-gray-800 to-gray-900 text-transparent bg-clip-text group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300">
           Contact
         </span>
         <ChevronRight
           size={16}
-          className="text-blue-400/70 group-hover:text-blue-300 group-hover:translate-x-0.5 transition-all duration-300"
+          className="text-blue-600/70 group-hover:text-blue-700 group-hover:translate-x-0.5 transition-all duration-300"
         />
 
         {/* Shine effect */}
@@ -105,7 +105,7 @@ const Header = () => {
       {/* Backdrop */}
       <div
         className={`absolute inset-0 transition-all duration-300 ${
-          scrolled ? "bg-gray-900/70 backdrop-blur-lg" : "bg-transparent"
+          scrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : "bg-transparent"
         }`}
       />
 
@@ -113,10 +113,10 @@ const Header = () => {
         <div className="relative flex items-center justify-between">
           <Link
             href="/"
-            className="text-white/90 hover:text-white transition-colors duration-300 flex items-center gap-2"
+            className="text-gray-800/90 hover:text-gray-900 transition-colors duration-300 flex items-center gap-2"
           >
             <span className="text-lg font-medium">
-              JOHN R<span className="text-blue-400">.</span>
+              JOHN R<span className="text-blue-600">.</span>
             </span>
           </Link>
           <div className="flex items-center gap-4">
@@ -131,10 +131,10 @@ const Header = () => {
 const NavLink = ({ href, children }) => (
   <Link
     href={href}
-    className="relative text-sm text-gray-300 hover:text-white transition-colors duration-300 group"
+    className="relative text-sm text-gray-700 hover:text-gray-900 transition-colors duration-300 group"
   >
     {children}
-    <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 group-hover:w-full transition-all duration-300" />
+    <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-600 group-hover:w-full transition-all duration-300" />
   </Link>
 );
 
