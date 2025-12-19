@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Background from "@/components/Background";
 import { metadata } from "./metadata";
@@ -21,6 +22,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D04162CF2N"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D04162CF2N');
+          `}
+        </Script>
         <Background />
         {children}
       </body>
