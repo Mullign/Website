@@ -31,7 +31,6 @@ const FeaturedProject = () => (
             fill
             className="object-contain p-6 md:p-10 group-hover:scale-[1.02] transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 50vw"
-            priority
           />
           <div className="absolute inset-0 ring-1 ring-[#d4af37]/20 pointer-events-none" aria-hidden />
         </Link>

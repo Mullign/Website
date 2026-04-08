@@ -31,9 +31,9 @@ export const metadata = {
     siteName: "John Russell",
     images: [
       {
-        url: `${baseUrl}/openGraph.png`,
+        url: "/og.png",
         width: 1200,
-        height: 544,
+        height: 630,
         alt: "John Russell — Software Engineer",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata = {
     title: "John Russell | Software Engineer",
     description: "Full-stack · React · TypeScript · Node.js · M.S. CS @ Clemson",
     creator: "@JohnRussell",
-    images: [`${baseUrl}/openGraph.png`],
+    images: ["/og.png"],
   },
   alternates: {
     canonical: baseUrl,
