@@ -4,6 +4,12 @@
 
 This repo is a single-page portfolio built with the Next.js App Router: one deployable surface for recruiters, collaborators, and clients.
 
+**Live:** [mull1gan.com](https://mull1gan.com)
+
+### Preview
+
+[![Portfolio site — hero, profile, and sections](docs/readme-site-preview.gif)](https://mull1gan.com)
+
 ---
 
 ## Overview
@@ -105,13 +111,7 @@ src/components/  → Header, Hero, About, Education, Skills, Experience, AppCard
 
 ## Screenshots / Demo
 
-| | |
-|:--|:--|
-| **Live site** | _Add your production URL here._ |
-| **Hero** | _Screenshot: `docs/screenshots/hero.png`_ |
-| **Projects** | _Screenshot: `docs/screenshots/projects.png`_ |
-
-Replace the placeholders with real links and images when you have them; recruiters care more about a working URL than polished mockups.
+The preview image above is a full-page capture of the deployed site (updated occasionally). For section-level crops, you can add `docs/screenshots/hero.png`, `docs/screenshots/projects.png`, etc.
 
 ---
 
