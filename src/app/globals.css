@@ -19,12 +19,47 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 main {
   position: relative;
   z-index: 1;
+}
+
+/* bg-clip-text + transparent fill can clip g, p, y — extra line-box + explicit webkit fill */
+.hero-gradient-headline {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  overflow: visible;
+  padding-top: 0.12em;
+  padding-bottom: 0.45em;
+  line-height: 1.55;
+}
+@media (min-width: 640px) {
+  .hero-gradient-headline {
+    line-height: 1.58;
+  }
+}
+
+@layer components {
+  .section-wrap {
+    @apply relative py-20 md:py-28 px-6;
+  }
+  .section-inner {
+    @apply max-w-5xl mx-auto relative z-10;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-4 text-slate-900;
+  }
+  .section-subtitle {
+    @apply text-slate-600 text-lg max-w-2xl mb-12 md:mb-14 leading-relaxed;
+  }
 }

@@ -4,7 +4,7 @@
 
 This repo is a single-page portfolio built with the Next.js App Router: one deployable surface for recruiters, collaborators, and clients.
 
-**Live:** [mull1gan.com](https://mull1gan.com)
+**Live:** [mull1gan.com](https://mull1gan.com) · **Repository:** [github.com/Mullign/Website](https://github.com/Mullign/Website)
 
 ### Preview
 
@@ -16,17 +16,19 @@ This repo is a single-page portfolio built with the Next.js App Router: one depl
 
 **Problem:** A résumé PDF and scattered links don’t tell your story well online, and they’re hard to keep in sync with what you’re building.
 
-**Who it’s for:** Hiring managers, technical recruiters, and anyone evaluating my background in web and mobile development.
+**Who it’s for:** Hiring managers, technical recruiters, and anyone evaluating my background in full-stack and web development.
 
-**Why it’s useful:** It’s a living profile—structured sections (hero, about, education, skills, experience, featured work) with shareable URLs, proper metadata for social previews, and analytics so I can see what resonates.
+**Why it’s useful:** It’s a living profile—structured sections (hero, featured project, selected work, GitHub activity, about, education, skills, experience) with shareable URLs, proper metadata for social previews, and analytics so I can see what resonates.
 
 ---
 
 ## Features
 
 - **Single-page layout** with anchored navigation and a consistent visual system (glass-style cards, gradient accents).
-- **Hero with a typewriter-style tagline rotation** and lightweight decorative UI (icons via Lucide).
-- **Project showcase** with outbound links to GitHub and live sites, using `next/image` for optimized assets.
+- **Hero** with headline, tech stack line, and CTAs (contact, resume download); lightweight decorative UI (Lucide icons).
+- **Featured project** plus **selected projects** with problem/solution/stack detail, outbound links to GitHub and live sites, and `next/image` for optimized assets.
+- **GitHub activity** section and **currently working** callout for ongoing work.
+- **Skills** grouped into Frontend, Backend, and Tools for quick scanning.
 - **SEO baked in:** central `metadata` (title templates, Open Graph, Twitter cards, keywords), dynamic `sitemap.xml`, and `robots.txt` with sensible crawl rules.
 - **Google Analytics** loaded with `next/script` (`afterInteractive`) to measure traffic without blocking first paint.
 - **Local typography** via `next/font/local` (Geist Sans / Geist Mono) for performance and a distinct look.
@@ -42,9 +44,11 @@ This repo is a single-page portfolio built with the Next.js App Router: one depl
 | **Styling** | Tailwind CSS, PostCSS |
 | **UI** | Lucide React |
 | **Fonts** | Geist (local WOFF via `next/font`) |
-| **Tooling** | ESLint (`eslint-config-next`) |
+| **Tooling** | ESLint 9 (flat config via `eslint.config.mjs`, `eslint-config-next`; `npm run lint` runs `eslint .`) |
 | **Analytics** | Google Analytics (gtag) |
 | **Hosting-ready** | Static-friendly; no database or custom backend required for the public site |
+
+`next.config.mjs` sets **Turbopack `root`** to this project directory to avoid wrong workspace-root warnings when multiple lockfiles exist nearby.
 
 There is **no separate backend API or database** in this project—content lives in components, and deploy targets (e.g. Vercel, Netlify, static hosting) serve the built output.
 
@@ -54,17 +58,20 @@ There is **no separate backend API or database** in this project—content lives
 
 ```
 src/app/
-  layout.js      → Root layout: fonts, global CSS, analytics scripts, background shell
+  layout.js      → Root layout: fonts, global CSS, analytics scripts
   page.js        → Composes page sections (server component tree)
   metadata.js    → Site-wide SEO exports for `layout.js`
   sitemap.js     → Route handler → /sitemap.xml
   robot.js       → Route handler → /robots.txt
-src/components/  → Header, Hero, About, Education, Skills, Experience, AppCard, Footer, Background
+src/components/  → Header, Hero, FeaturedProject, Projects, CurrentlyWorking,
+                   GitHubSection, About, Education, Skills, Experience, Footer
+public/          → Images, resume PDF, static assets
 ```
 
 - **`NEXT_PUBLIC_BASE_URL`** drives canonical URLs, Open Graph image paths, and sitemap/robots host values. If unset, a production default is used in code—set this per environment.
-- **Server vs client:** The main page is a server component; sections like `Hero` use `"use client"` only where hooks and animation state are required, keeping the client bundle smaller.
+- **Server vs client:** The main page is a server component; sections like `Hero` use `"use client"` where client-only APIs are needed, keeping the client bundle focused on interactive leaves.
 - **Images:** Project and profile assets live under `public/`; `next/image` handles sizing and lazy loading where appropriate.
+- **Contact email** is centralized in `src/constants/contact.js` for consistent mailto links in header, hero, and footer.
 
 ---
 
@@ -74,7 +81,7 @@ src/components/  → Header, Hero, About, Education, Skills, Experience, AppCard
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Mullign/Website.git
    cd Website
    ```
 
@@ -119,8 +126,9 @@ The preview image above is a full-page capture of the deployed site (updated occ
 
 - **SEO as code:** Moving titles, descriptions, and social metadata into a single export (`metadata.js`) made iteration safer than duplicating tags across pages.
 - **App Router conventions:** Using route files for `sitemap` and `robots` keeps crawler-facing endpoints versioned with the app instead of hand-maintained static files.
-- **Client boundaries:** The hero typewriter and similar UI need client state; pushing that to leaf components avoided turning the whole page into a client bundle.
+- **Client boundaries:** Keeping `"use client"` on sections that need it (hero interactions, etc.) avoids bloating the whole page as a client bundle.
 - **Base URL discipline:** Canonical and OG URLs break silently if `NEXT_PUBLIC_BASE_URL` doesn’t match deployment—documenting and validating that in CI or a pre-deploy check would be a small win.
+- **Gradient text + WebKit:** Combining `background-clip: text` with animated background positions can clip descenders; the hero uses a static gradient on the clipped line and overflow tweaks where needed.
 
 ---
 
@@ -135,4 +143,4 @@ The preview image above is a full-page capture of the deployed site (updated occ
 
 ## Author
 
-**John Russell** — Software developer focused on **React Native** and **iOS**, with experience shipping web UIs (React, Tailwind) in professional settings. Background in **construction project management** and **systems work** (volunteer SAR tech, small-business IT), now pursuing a **Master’s in Computer Science at Clemson University**. I care about clear UX, maintainable front-end structure, and measurable outcomes.
+**John Russell** — Full-stack software engineer building **web applications** with React, TypeScript, Node.js, and related tooling, with additional experience in mobile (React Native, SwiftUI). Background in **construction project management** and **systems work** (volunteer SAR tech, small-business IT), now pursuing a **Master’s in Computer Science at Clemson University**. I care about clear UX, maintainable architecture, and shipping real-world solutions.

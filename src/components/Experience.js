@@ -1,75 +1,67 @@
 import React from "react";
 
 const ExperienceItem = ({ title, company, location, period, description }) => (
-  <div className="relative group">
-    {/* Glowing border effect */}
-    <div className="absolute -left-0.5 top-0 w-0.5 h-full bg-gradient-to-b from-blue-500 via-blue-600 to-transparent group-hover:opacity-100 opacity-60 transition-opacity duration-300" />
-
-    <div className="pl-6 py-4">
-      <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-        {title}
-      </h3>
-      <p className="text-gray-600 mb-2">
-        {company}{location ? ` • ${location}` : ''} • <span className="text-blue-600/80">{period}</span>
+  <div className="relative rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm hover:border-blue-200/80 transition-colors">
+    <div className="border-l-4 border-blue-500 pl-5 -ml-1">
+      <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+      <p className="text-slate-600 text-sm mt-1">
+        {company}
+        {location ? ` · ${location}` : ""}
+        <span className="text-slate-400"> · </span>
+        <span className="text-blue-700 font-medium">{period}</span>
       </p>
-      <p className="text-gray-700 leading-relaxed">{description}</p>
+      <p className="text-slate-700 leading-relaxed mt-4 text-sm md:text-base">{description}</p>
     </div>
-
-    {/* Hover highlight effect */}
-    <div className="absolute inset-0 bg-blue-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
   </div>
 );
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Web Developer",
+      title: "Web Developer (Contract)",
       company: "DeGroff Aviation Technologies",
-      location: "Canton, Ohio",
-      period: "2025 to Present",
+      location: "Remote",
+      period: "Mar 2025 – Present",
       description:
-        "Building a new website for a proprietary aviation product using React and Tailwind CSS. Creating reusable components and a scalable front-end structure. Working directly with ownership on design, branding, copy, and layout. Improving performance, mobile responsiveness, and load efficiency."
+        "Developed a production web application using React, Next.js, and TypeScript, contributing to core user-facing functionality. Built reusable, modular UI components for a scalable, maintainable architecture; translated stakeholder requirements into functional UI/UX; and improved performance through optimized rendering and asset handling.",
+    },
+    {
+      title: "System Administrator (Volunteer)",
+      company: "For A Child LLC",
+      location: "Canton, Ohio",
+      period: "Jan 2019 – Present",
+      description:
+        "Managed IT systems across Windows environments for reliability and uptime. Configured and supported iOS and Android devices for organizational use; diagnosed and resolved system and network issues; and maintained secure data access and performance across environments.",
+    },
+    {
+      title: "Technical Specialist (Volunteer)",
+      company: "Tech n Rescue",
+      location: "Ohio",
+      period: "Nov 2024 – Present",
+      description:
+        "Designed and improved workflows for device intake, repair tracking, and distribution. Supported systems for multi-user coordination and operational tracking; maintained Linux and Windows environments for consistent performance.",
     },
     {
       title: "Project Manager",
       company: "Coon Restoration",
       location: "Louisville, Ohio",
-      period: "2023 to 2025",
+      period: "Apr 2023 – 2025",
       description:
-        "Managed major restoration projects including the Progressive Field lower and upper bowl. Ran the full Moundsville WV Municipal Building project as Project Manager and Site Superintendent. Coordinated subcontractors, schedules, inspections, and material logistics. Completed RFIs, submittals, change orders, weekly meetings, documentation, and safety oversight. Supervised daily field operations and performed equipment operation when needed."
-    },
-    {
-      title: "Volunteer Technician",
-      company: "Tech n Rescue",
-      location: "Ohio",
-      period: "2024 to Present",
-      description:
-        "Support field operations, events, and training for search and rescue teams. Work with sonar tools, signal range extenders, communications hardware, and tactical equipment. Assist with new equipment testing, field configuration, and deployment. Maintain and configure custom PCs, Raspberry Pi devices, Starlink Roam, CivTAK systems, Windows Server, Arch Linux VMs, and Meshtastic devices."
-    },
-    {
-      title: "System Administrator",
-      company: "For A Child LLC",
-      location: "Canton, Ohio",
-      period: "2019 to Present",
-      description:
-        "Maintain secure, reliable computer systems and devices. Manage iOS and Android tablets for teaching and communication. Administer Microsoft Server and ensure reliable data access. Diagnose and repair hardware failures and perform routine system checks.",
+        "Managed large-scale restoration projects: coordinated subcontractors, scheduling, and logistics. Oversaw RFIs, submittals, and documentation to keep timelines and scope accurate.",
     },
   ];
 
   return (
-    <section className="py-20 px-6 relative">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text">
-          Experience
-        </h2>
-        <div className="space-y-6">
-          {experiences.map((exp, index) => (
-            <ExperienceItem key={index} {...exp} />
+    <section id="experience" className="section-wrap">
+      <div className="section-inner max-w-5xl">
+        <h2 className="section-title">Experience</h2>
+        <p className="section-subtitle">Recent roles—engineering-first, with operations and leadership context.</p>
+        <div className="space-y-5 max-w-3xl">
+          {experiences.map((exp) => (
+            <ExperienceItem key={`${exp.company}-${exp.title}`} {...exp} />
           ))}
         </div>
       </div>
-      {/* Glass effect background */}
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm" />
     </section>
   );
 };

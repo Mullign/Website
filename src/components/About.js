@@ -1,25 +1,25 @@
 import React from "react";
 
 const About = () => (
-  <section className="py-20 px-6 relative">
-    <div className="max-w-6xl mx-auto relative z-10">
-      <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text">
-        About Me
-      </h2>
-      <div className="text-lg space-y-4">
-        <p className="text-gray-700 leading-relaxed">
-          I am a self-taught software developer with a passion for building high-quality applications and scalable digital solutions. What started as a curiosity about how software is created has grown into hands-on experience developing websites, applications, and system integrations.
+  <section id="about" className="section-wrap">
+    <div className="section-inner max-w-3xl">
+      <h2 className="section-title">About</h2>
+      <div className="space-y-5 text-slate-700 leading-relaxed text-base">
+        <p>
+          I moved into software engineering from hands-on project management and IT operations. That background shaped how I work:
+          clarify requirements early, communicate tradeoffs clearly, and ship incrementally instead of boiling the ocean.
         </p>
-        <p className="text-gray-700 leading-relaxed">
-          With a background in project management and IT systems, I bring a unique blend of technical skill and real-world operational experience. I am currently advancing my expertise through Clemson&apos;s Master of Computer Science program and have earned Google&apos;s Cybersecurity Certificate. I enjoy solving complex problems, improving workflows with technology, and creating clean, well-structured software.
+        <p>
+          I enjoy breaking down ambiguous problems—whether it&apos;s UI architecture, API boundaries, or performance—and turning them
+          into maintainable code. I&apos;m completing an M.S. in Computer Science at Clemson to deepen theory in parallel with
+          production engineering work.
         </p>
-        <p className="text-gray-700 leading-relaxed">
-          I am looking to transition fully into a software development role where I can apply my technical abilities and project-driven mindset.
+        <p className="text-slate-800 font-medium">
+          I&apos;m targeting software engineering roles where I can own features end-to-end and collaborate with a strong product
+          and platform culture.
         </p>
       </div>
     </div>
-    {/* Glass effect background */}
-    <div className="absolute inset-0 bg-white/50 backdrop-blur-sm" />
   </section>
 );
 
