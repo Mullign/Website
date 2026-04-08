@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "generate-og": "node scripts/generate-og.mjs"
+    "generate-og": "node scripts/generate-og.mjs",
+    "capture-readme-preview": "node scripts/capture-readme-preview.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "eslint": "^9",
     "eslint-config-next": "^16.0.7",
+    "playwright": "^1.59.1",
     "postcss": "^8",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17"

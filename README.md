@@ -8,7 +8,7 @@ This repo is a single-page portfolio built with the Next.js App Router: one depl
 
 ### Preview
 
-[![Portfolio site — hero, profile, and sections](docs/readme-site-preview.gif)](https://mull1gan.com)
+[![Portfolio site — full-page preview](docs/readme-site-preview.png)](https://mull1gan.com)
 
 ---
 
@@ -118,7 +118,7 @@ public/          → Images, resume PDF, static assets
 
 ## Screenshots / Demo
 
-The preview image above is a full-page capture of the deployed site (updated occasionally). For section-level crops, you can add `docs/screenshots/hero.png`, `docs/screenshots/projects.png`, etc.
+The preview image above is a full-page PNG capture of the deployed site (regenerate via `npm run capture-readme-preview` when the layout changes). For section-level crops, you can add `docs/screenshots/hero.png`, `docs/screenshots/projects.png`, etc.
 
 ---
 
