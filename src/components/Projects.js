@@ -92,6 +92,34 @@ const ProjectCard = ({ project }) => (
 
 const projects = [
   {
+    title: "Orion AI — Self-Hosted AI Chat Workspace",
+    summary: "Open-source, Docker-ready AI chat platform with local Ollama and optional cloud providers—password protected and fully yours.",
+    problem:
+      "Teams and individuals who want private AI chat without sending prompts to third-party SaaS need a setup that is easy to run locally, supports multiple model backends, and keeps conversation history under their control.",
+    solution:
+      "Built a dual-app monorepo: a Next.js chat client with JWT session auth, multi-provider routing via the Vercel AI SDK (Ollama, OpenAI, Anthropic, Google), and persisted conversations on disk. Packaged the stack in Docker Compose with bundled Ollama, automatic model pull on first boot, and a guided `/setup` flow—one command to clone, configure credentials, and run.",
+    stack: [
+      "Next.js 16",
+      "TypeScript",
+      "Vercel AI SDK",
+      "Ollama",
+      "Docker Compose",
+      "Tailwind CSS v4",
+      "JWT auth",
+    ],
+    features: [
+      "Self-hosted chat workspace with password protection and no telemetry",
+      "Local-first Ollama integration with optional OpenAI, Anthropic, and Google providers",
+      "Docker Compose stack: Ollama, model init, and chat app on a single `npm run setup`",
+      "Conversation persistence, provider switching, and marketing/docs site in one repo",
+    ],
+    image: "/orion-logo.jpg",
+    imageContain: true,
+    imageClassName: "bg-slate-950",
+    live: null,
+    github: "https://github.com/Mullign/Orion-AI",
+  },
+  {
     title: "Tech n Rescue — Asset Intake & Repair Tracker",
     summary: "Full-stack web app for nonprofit tech repair programs (public GitHub reference implementation).",
     problem:
