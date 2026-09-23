@@ -92,6 +92,27 @@ const ProjectCard = ({ project }) => (
 
 const projects = [
   {
+    title: "For A Child — Preschool & Daycare Website",
+    summary:
+      "Production Next.js site for For A Child, LLC—a licensed preschool and daycare in North Canton, Ohio.",
+    problem:
+      "A local preschool needed a credible, accessible website parents could trust—hours, contact, licensing, and classroom life—without a heavyweight CMS or invented marketing fluff.",
+    solution:
+      "Built a content-driven Next.js App Router site with TypeScript and Tailwind: centralized copy in a typed config, semantic pages, SEO metadata and JSON-LD, Google Maps embed, and real photography. Designed so remaining gaps stay as clear placeholders until the school provides final assets.",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "SEO / JSON-LD", "Responsive UI"],
+    features: [
+      "Live production site with About, Contact, gallery, and enrollment-oriented flows",
+      "Typed content layer (`site.ts`) for hours, team, testimonials, and branding",
+      "Accessibility-minded layout, pastel brand theme, and structured SEO metadata",
+      "Public GitHub repo with checklist-driven handoff for remaining school assets",
+    ],
+    image: "/for-a-child-logo.png",
+    imageContain: true,
+    imageClassName: "bg-[#1a1a1a]",
+    live: "https://forachildllc.com",
+    github: "https://github.com/Mullign/ForAChild",
+  },
+  {
     title: "Orion AI — Self-Hosted AI Chat Workspace",
     summary: "Open-source, Docker-ready AI chat platform with local Ollama and optional cloud providers—password protected and fully yours.",
     problem:
