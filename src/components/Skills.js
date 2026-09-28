@@ -1,8 +1,8 @@
 import React from "react";
-import { Layout, Server, Wrench } from "lucide-react";
+import { Layout, Server, Wrench, HardDrive } from "lucide-react";
 
 const SkillColumn = ({ title, skills, icon: Icon }) => (
-  <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm hover:shadow-md hover:border-blue-200/80 transition-all">
+  <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm hover:shadow-md hover:border-blue-200/80 transition-all h-full">
     <div className="flex items-center gap-3 mb-5">
       <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-100">
         <Icon className="w-5 h-5 text-blue-700" aria-hidden />
@@ -23,23 +23,47 @@ const SkillColumn = ({ title, skills, icon: Icon }) => (
 );
 
 const Skills = () => {
-  const data = {
-    frontend: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS", "SwiftUI"],
-    backend: ["Node.js", "REST APIs", "PostgreSQL", "Prisma", "Auth patterns (e.g. NextAuth)"],
-    tools: ["Git", "Docker", "AWS (basics)", "Azure AD", "Linux", "VS Code", "Xcode"],
-  };
+  const data = [
+    {
+      title: "Web Development",
+      icon: Layout,
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS"],
+    },
+    {
+      title: "Systems and Infrastructure",
+      icon: HardDrive,
+      skills: ["Linux", "Docker", "Docker Compose", "Git", "GitHub Actions"],
+    },
+    {
+      title: "Data and Backend",
+      icon: Server,
+      skills: ["Node.js", "REST APIs", "PostgreSQL", "Prisma"],
+    },
+    {
+      title: "Other Technical Experience",
+      icon: Wrench,
+      skills: [
+        "System administration",
+        "Technical troubleshooting",
+        "Deployment workflows",
+        "Domain configuration",
+        "Analytics",
+        "SEO",
+      ],
+    },
+  ];
 
   return (
     <section id="skills" className="section-wrap">
       <div className="section-inner max-w-5xl">
         <h2 className="section-title">Technical skills</h2>
         <p className="section-subtitle">
-          Grouped for quick scanning—strongest web stack first, then backend data layer, then delivery tooling.
+          Tools and practices I use in websites, deployments, and day-to-day systems work.
         </p>
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          <SkillColumn title="Frontend" skills={data.frontend} icon={Layout} />
-          <SkillColumn title="Backend & data" skills={data.backend} icon={Server} />
-          <SkillColumn title="Tools & platforms" skills={data.tools} icon={Wrench} />
+        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+          {data.map((column) => (
+            <SkillColumn key={column.title} title={column.title} skills={column.skills} icon={column.icon} />
+          ))}
         </div>
       </div>
     </section>

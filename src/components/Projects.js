@@ -10,6 +10,13 @@ const TechBadge = ({ children }) => (
   </span>
 );
 
+const StoryBlock = ({ label, children }) => (
+  <p>
+    <span className="font-semibold text-slate-900">{label} · </span>
+    {children}
+  </p>
+);
+
 const ProjectCard = ({ project }) => (
   <article className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-lg hover:shadow-2xl hover:border-blue-200/90 hover:-translate-y-0.5 transition-all duration-300 group">
     <div className="md:grid md:grid-cols-12 md:gap-0">
@@ -23,27 +30,31 @@ const ProjectCard = ({ project }) => (
           src={project.image}
           alt={project.title}
           fill
-          className={`object-cover group-hover:scale-[1.03] transition-transform duration-500 ${project.imageContain ? "object-contain p-6" : ""} ${project.imageClassName || ""}`}
+          className={`group-hover:scale-[1.03] transition-transform duration-500 ${project.imageContain ? "object-contain p-6" : "object-cover"} ${project.imageClassName || ""}`}
           sizes="(max-width: 768px) 100vw, 42vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity md:hidden" />
       </Link>
 
       <div className="md:col-span-7 p-8 md:p-10 flex flex-col">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          {project.personal && (
+            <span className="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200">
+              Personal project
+            </span>
+          )}
+          {project.label && <span className="text-xs font-medium text-slate-500">{project.label}</span>}
+        </div>
         <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-1 group-hover:text-blue-700 transition-colors">
           {project.title}
         </h3>
         <p className="text-sm font-medium text-blue-600/90 mb-4">{project.summary}</p>
 
         <div className="space-y-4 text-sm text-slate-700 leading-relaxed flex-1">
-          <p>
-            <span className="font-semibold text-slate-900">Problem · </span>
-            {project.problem}
-          </p>
-          <p>
-            <span className="font-semibold text-slate-900">Solution · </span>
-            {project.solution}
-          </p>
+          <StoryBlock label="Need">{project.need}</StoryBlock>
+          <StoryBlock label="What I built">{project.implemented}</StoryBlock>
+          <StoryBlock label="Technical choices">{project.decisions}</StoryBlock>
+          <StoryBlock label="Purpose">{project.outcome}</StoryBlock>
         </div>
 
         <div className="flex flex-wrap gap-2 my-6">
@@ -51,14 +62,6 @@ const ProjectCard = ({ project }) => (
             <TechBadge key={t}>{t}</TechBadge>
           ))}
         </div>
-
-        <ul className="space-y-2 mb-8 text-sm text-slate-600 border-l-2 border-blue-200 pl-4">
-          {project.features.map((f) => (
-            <li key={f} className="leading-snug">
-              {f}
-            </li>
-          ))}
-        </ul>
 
         <div className="flex flex-wrap gap-3 mt-auto">
           {project.github && (
@@ -80,7 +83,7 @@ const ProjectCard = ({ project }) => (
               className="inline-flex items-center gap-2 rounded-lg border-2 border-blue-600 text-blue-700 px-4 py-2.5 text-sm font-semibold hover:bg-blue-50 transition-colors"
             >
               <Globe className="w-4 h-4" aria-hidden />
-              Live demo
+              Live site
               <ChevronRight className="w-4 h-4 opacity-70" aria-hidden />
             </Link>
           )}
@@ -92,95 +95,25 @@ const ProjectCard = ({ project }) => (
 
 const projects = [
   {
-    title: "For A Child — Preschool & Daycare Website",
-    summary:
-      "Production Next.js site for For A Child, LLC—a licensed preschool and daycare in North Canton, Ohio.",
-    problem:
-      "A local preschool needed a credible, accessible website parents could trust—hours, contact, licensing, and classroom life—without a heavyweight CMS or invented marketing fluff.",
-    solution:
-      "Built a content-driven Next.js App Router site with TypeScript and Tailwind: centralized copy in a typed config, semantic pages, SEO metadata and JSON-LD, Google Maps embed, and real photography. Designed so remaining gaps stay as clear placeholders until the school provides final assets.",
-    stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "SEO / JSON-LD", "Responsive UI"],
-    features: [
-      "Live production site with About, Contact, gallery, and enrollment-oriented flows",
-      "Typed content layer (`site.ts`) for hours, team, testimonials, and branding",
-      "Accessibility-minded layout, pastel brand theme, and structured SEO metadata",
-      "Public GitHub repo with checklist-driven handoff for remaining school assets",
-    ],
-    image: "/for-a-child-logo.png",
-    imageContain: true,
-    imageClassName: "bg-[#1a1a1a]",
-    live: "https://forachildllc.com",
-    github: "https://github.com/Mullign/ForAChild",
-  },
-  {
-    title: "Orion AI — Self-Hosted AI Chat Workspace",
-    summary: "Open-source, Docker-ready AI chat platform with local Ollama and optional cloud providers—password protected and fully yours.",
-    problem:
-      "Teams and individuals who want private AI chat without sending prompts to third-party SaaS need a setup that is easy to run locally, supports multiple model backends, and keeps conversation history under their control.",
-    solution:
-      "Built a dual-app monorepo: a Next.js chat client with JWT session auth, multi-provider routing via the Vercel AI SDK (Ollama, OpenAI, Anthropic, Google), and persisted conversations on disk. Packaged the stack in Docker Compose with bundled Ollama, automatic model pull on first boot, and a guided `/setup` flow—one command to clone, configure credentials, and run.",
+    title: "DeGroff Aviation Technologies Website",
+    label: "Web development · 2025 - Present",
+    summary: "Production website for a commercial aviation product, built in my contract role at DeGroff Aviation Technologies.",
+    need: "The company needed a production website that could explain a commercial aviation product, support customer outreach, and stay maintainable without a large internal web team.",
+    implemented:
+      "I designed and developed the site, including responsive layouts, reusable components, technical documentation, customer contact functionality, analytics, and SEO metadata.",
+    decisions:
+      "The stack is Next.js, React, TypeScript, and Tailwind CSS, with GitHub Actions for deployment, EmailJS for contact, Google Analytics, and a custom domain.",
+    outcome:
+      "The live site supports product presentation and customer outreach, and I continue to maintain it as product and company needs change.",
     stack: [
-      "Next.js 16",
+      "Next.js",
+      "React",
       "TypeScript",
-      "Vercel AI SDK",
-      "Ollama",
-      "Docker Compose",
-      "Tailwind CSS v4",
-      "JWT auth",
-    ],
-    features: [
-      "Self-hosted chat workspace with password protection and no telemetry",
-      "Local-first Ollama integration with optional OpenAI, Anthropic, and Google providers",
-      "Docker Compose stack: Ollama, model init, and chat app on a single `npm run setup`",
-      "Conversation persistence, provider switching, and marketing/docs site in one repo",
-    ],
-    image: "/orion-logo.jpg",
-    imageContain: true,
-    imageClassName: "bg-slate-950",
-    live: null,
-    github: "https://github.com/Mullign/Orion-AI",
-  },
-  {
-    title: "Tech n Rescue — Asset Intake & Repair Tracker",
-    summary: "Full-stack web app for nonprofit tech repair programs (public GitHub reference implementation).",
-    problem:
-      "Volunteer repair programs need accountable tracking from device donation through repair to handoff—without spreadsheets siloed by role or lost audit history.",
-    solution:
-      "Implemented a Next.js App Router application with Prisma + PostgreSQL for a normalized device model, status workflow (intake → repair → distribution), and JSON APIs guarded by middleware. Added NextAuth credentials with JWT sessions, Zod-validated inputs, and RBAC (admin, volunteer, intake) enforced in API handlers—mirroring how real orgs separate duties.",
-    stack: [
-      "Next.js 16",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "NextAuth.js v5",
-      "Zod",
-      "Tailwind CSS v4",
-    ],
-    features: [
-      "Seven-stage device workflow with repair notes, parts usage, volunteer assignment, and distribution logging",
-      "Dashboard aggregates: counts by status, assignments, and recently updated devices",
-      "Admin user management; protected routes and 401 JSON responses on API misuse",
-      "MIT-licensed public repo suitable for portfolio review",
-    ],
-    image: "/tech-n-rescue-logo.png",
-    imageContain: true,
-    imageClassName: "bg-[#0a1628]",
-    live: null,
-    github: "https://github.com/Mullign/Tech-N-Rescue",
-  },
-  {
-    title: "PitotShield V2™ — Marketing & product site",
-    summary: "Production web application for an aviation safety product (contract).",
-    problem:
-      "Stakeholders needed a credible, fast, media-rich site that explains a technical product to mixed audiences—operators, procurement, and partners—without a heavyweight CMS team.",
-    solution:
-      "Designed and built a modular Next.js + TypeScript front end with reusable layout primitives, static-friendly output, and asset strategies tuned for GitHub Pages–class hosting. Translated ownership feedback into shippable UI iterations and tightened perceived performance through image discipline and section-level code splitting.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Responsive UI", "SEO metadata"],
-    features: [
-      "Component-driven architecture for long-form marketing sections and repeated content blocks",
-      "Lead capture via EmailJS with client-side rate limiting",
-      "Embedded training media and downloadable PDFs with clear CTAs",
-      "Dark/light theme for extended reading sessions",
+      "Tailwind CSS",
+      "GitHub Actions",
+      "EmailJS",
+      "Google Analytics",
+      "SEO",
     ],
     image: "/degroff-logo.png",
     imageContain: true,
@@ -188,22 +121,41 @@ const projects = [
     github: null,
   },
   {
-    title: "Do Better Everyday",
-    summary: "Native iOS habit-tracking app focused on clarity and daily use.",
-    problem:
-      "Users needed a lightweight, trustworthy daily habit flow without noisy UI or laggy state updates on older phones.",
-    solution:
-      "Implemented a SwiftUI client with async-friendly loading paths and a compact navigation model so the critical path (log → feedback) stays under a few taps. Structured views for maintainability as features grow.",
-    stack: ["Swift", "SwiftUI", "iOS", "Async patterns"],
-    features: [
-      "SwiftUI screens with smooth async loading and optimistic-style feedback",
-      "Focused UX for recurring daily use (minimal chrome, clear hierarchy)",
-      "Separation of UI and data flow for easier iteration",
-    ],
-    image: "/image.png",
-    imageContain: false,
+    title: "For A Child Website",
+    label: "Web development · 2026 - Present",
+    summary: "Redesign of the For A Child LLC website, connected to my volunteer work as web developer and system administrator.",
+    need: "The organization needed a clearer, more usable website for families looking for programs and services, including better mobile use and more accessible information.",
+    implemented:
+      "I redesigned and developed the site with a focus on accessibility, usability, content organization, community outreach, and clearer navigation.",
+    decisions:
+      "The site is built as a responsive web project so information about programs and services is easier to find on phones and desktops, with accessibility treated as a design requirement rather than an afterthought.",
+    outcome:
+      "The current site presents the organization's programs and services more clearly and is easier for families to use.",
+    stack: ["Responsive design", "Accessibility", "Content organization", "Community outreach"],
+    image: "/for-a-child-logo.png",
+    imageContain: true,
+    imageClassName: "bg-[#1a1a1a]",
+    live: "https://forachildllc.com",
+    github: "https://github.com/Mullign/ForAChild",
+  },
+  {
+    title: "Orion AI",
+    label: "Personal full-stack project · 2026 - Present",
+    personal: true,
+    summary: "A personal project: a self-hosted AI workspace I built to practice full-stack development and deployment, not professional employment.",
+    need: "I wanted a way to run AI chat locally, keep configuration under my control, and optionally connect cloud providers without relying on a hosted SaaS product.",
+    implemented:
+      "I built a self-hosted workspace with local Ollama support, optional OpenAI, Anthropic, and Google AI providers, authentication, provider configuration, persistent conversation storage, and automated model initialization.",
+    decisions:
+      "Docker Compose is used so the stack can be started as a single deployment, with local Ollama as the default path and cloud providers available when needed.",
+    outcome:
+      "The project makes self-hosted AI deployment and configuration easier to manage. It is a personal learning and portfolio project, not client or employer work.",
+    stack: ["Docker Compose", "Ollama", "Authentication", "Provider configuration"],
+    image: "/orion-logo.jpg",
+    imageContain: true,
+    imageClassName: "bg-slate-950",
     live: null,
-    github: "https://github.com/Mullign/Better-yourself",
+    github: "https://github.com/Mullign/Orion-AI",
   },
 ];
 
@@ -212,7 +164,7 @@ const Projects = () => (
     <div className="section-inner max-w-5xl">
       <h2 className="section-title">Selected projects</h2>
       <p className="section-subtitle">
-        Deep dives into shipped work—architecture choices, constraints, and outcomes. Each row is written for a quick technical scan.
+        Each project starts with the need, then what I built, the technical choices involved, and what the work is for.
       </p>
       <div className="space-y-16 md:space-y-20">
         {projects.map((project) => (

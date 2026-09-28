@@ -44,7 +44,7 @@ function HeroCta({
   }[variant];
 
   const shell =
-    "group relative inline-flex w-full min-[400px]:w-auto rounded-xl p-[2px] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2";
+    "group relative inline-flex w-full rounded-xl p-[2px] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2";
 
   if (external) {
     return (
@@ -64,7 +64,7 @@ function HeroCta({
 
 const Hero = () => {
   return (
-    <section className="min-h-[min(100dvh,860px)] flex items-center justify-center px-4 sm:px-6 pt-[5.5rem] pb-14 md:pt-28 md:pb-20 relative overflow-x-hidden overflow-y-visible">
+    <section className="min-h-[min(100dvh,900px)] flex items-center justify-center px-4 sm:px-6 pt-[5.5rem] pb-14 md:pt-28 md:pb-20 relative overflow-x-hidden overflow-y-visible">
       <div
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
@@ -82,7 +82,7 @@ const Hero = () => {
       <div className="absolute w-2 h-2 rounded-full bg-blue-400/40 top-[26%] left-[20%] blur-px" />
       <div className="absolute w-1.5 h-1.5 rounded-full bg-purple-400/35 bottom-[30%] right-[22%]" />
 
-      <div className="w-full max-w-[34rem] md:max-w-[40rem] mx-auto text-center relative z-10">
+      <div className="w-full max-w-[36rem] md:max-w-[42rem] mx-auto text-center relative z-10">
         <div className="mb-5 sm:mb-6 md:mb-7 flex justify-center">
           <div className="relative w-[6.75rem] h-[6.75rem] sm:w-[7.75rem] sm:h-[7.75rem] md:w-[9.5rem] md:h-[9.5rem]">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/30 to-fuchsia-400/25 blur-2xl scale-[1.2]" />
@@ -94,43 +94,42 @@ const Hero = () => {
           </div>
         </div>
 
-        <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-2 sm:mb-2.5">
-          Software Engineer · Full-Stack Developer
+        <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.12em] sm:tracking-[0.2em] text-blue-600 mb-2 sm:mb-2.5 px-2 leading-relaxed">
+          Project Management · Computer Science · Technical Solutions
         </p>
 
-        <h1 className="font-bold text-slate-900 mb-2 sm:mb-3 px-0.5 overflow-visible">
-          <span className="block tracking-tight text-[clamp(1.1rem,3.8vw,1.6rem)] sm:text-2xl md:text-3xl leading-[1.28] sm:leading-[1.32]">
-            <span className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-              <span>Full-Stack Software Engineer</span>
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 shrink-0 animate-sparkle" aria-hidden />
-            </span>
+        <h1 className="hero-gradient-headline font-bold mb-3 sm:mb-4 px-0.5 overflow-visible bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500">
+          <span className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 tracking-tight text-[clamp(1.15rem,4vw,1.85rem)] sm:text-3xl md:text-4xl leading-[1.28] sm:leading-[1.3]">
+            <span>Bridging Project Leadership</span>
+            <Sparkles
+              className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 animate-sparkle text-blue-500 [-webkit-text-fill-color:theme(colors.blue.500)]"
+              aria-hidden
+            />
           </span>
-          {/* Static gradient (no bg-position animation) — animating bg + clip-text often clips descenders */}
-          <span className="hero-gradient-headline mt-1.5 sm:mt-2 text-balance text-[clamp(1rem,3.4vw,1.85rem)] sm:text-xl md:text-2xl lg:text-[2rem] bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 tracking-normal">
-            Building Real-World Applications
+          <span className="block mt-1 sm:mt-1.5 text-balance text-[clamp(1.05rem,3.6vw,1.95rem)] sm:text-2xl md:text-3xl tracking-normal">
+            and Technology
           </span>
         </h1>
 
-        <p className="text-[11px] sm:text-sm text-slate-500 mb-4 sm:mb-5 font-medium max-w-md mx-auto px-1 py-1.5 [line-height:1.7]">
-          React · TypeScript · Node.js · Next.js · PostgreSQL · REST APIs
+        <p className="text-sm sm:text-base text-slate-700 max-w-xl mx-auto mb-7 sm:mb-8 [line-height:1.75]">
+          Project Manager and Computer Science graduate student with experience leading complex projects, developing web
+          solutions, supporting technical systems, and turning organizational requirements into practical solutions.
         </p>
 
-        <p className="text-sm sm:text-base text-slate-700 max-w-lg mx-auto mb-7 sm:mb-8 [line-height:1.75]">
-          I build scalable web applications using modern technologies like React, TypeScript, and Node.js, with a focus on clean
-          architecture and real-world problem solving.
-        </p>
-
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-3 max-w-md sm:max-w-2xl mx-auto mb-6 sm:mb-7">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-3 max-w-xl mx-auto mb-6 sm:mb-7">
           <HeroCta href="#work" variant="primary">
             View My Work
             <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
           </HeroCta>
-          <HeroCta href={mailtoHref} variant="ghost">
-            Contact Me
+          <HeroCta href="#experience" variant="ghost">
+            View Experience
           </HeroCta>
           <HeroCta href="/resume.pdf" variant="resume" external>
             <Download className="w-4 h-4 shrink-0" aria-hidden />
             Download Resume
+          </HeroCta>
+          <HeroCta href={mailtoHref} variant="ghost">
+            Contact Me
           </HeroCta>
         </div>
 

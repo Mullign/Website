@@ -14,14 +14,14 @@ const Portfolio = () => (
   <main className="min-h-screen relative bg-slate-50/30">
     <Header />
     <Hero />
+    <CurrentlyWorking />
+    <Experience />
     <FeaturedProject />
     <Projects />
-    <CurrentlyWorking />
-    <GitHubSection />
     <About />
     <Education />
     <Skills />
-    <Experience />
+    <GitHubSection />
     <Footer />
   </main>
 );

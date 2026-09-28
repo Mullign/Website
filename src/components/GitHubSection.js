@@ -11,7 +11,7 @@ const GitHubSection = () => (
         <div>
           <h2 className="section-title mb-2">GitHub activity</h2>
           <p className="text-slate-600 text-sm max-w-xl leading-relaxed">
-            Public contribution history. See repositories and pinned work on GitHub for code-level detail.
+            Public contribution history, including personal projects. Repositories on GitHub have additional technical detail.
           </p>
         </div>
         <Link

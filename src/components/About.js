@@ -6,17 +6,20 @@ const About = () => (
       <h2 className="section-title">About</h2>
       <div className="space-y-5 text-slate-700 leading-relaxed text-base">
         <p>
-          I moved into software engineering from hands-on project management and IT operations. That background shaped how I work:
-          clarify requirements early, communicate tradeoffs clearly, and ship incrementally instead of boiling the ocean.
+          I started in construction project management. That work taught me how to understand requirements, coordinate
+          stakeholders, manage competing priorities, document decisions, and move complex work from planning through
+          completion.
         </p>
         <p>
-          I enjoy breaking down ambiguous problems—whether it&apos;s UI architecture, API boundaries, or performance—and turning them
-          into maintainable code. I&apos;m completing an M.S. in Computer Science at Clemson to deepen theory in parallel with
-          production engineering work.
+          My technical work has grown out of that same habit of solving real problems. I develop and maintain websites,
+          support organizational systems, work with Linux environments, handle deployment workflows, and troubleshoot
+          day-to-day technology needs. I am completing an M.S. in Computer Science at Clemson University to deepen that
+          technical foundation.
         </p>
-        <p className="text-slate-800 font-medium">
-          I&apos;m targeting software engineering roles where I can own features end-to-end and collaborate with a strong product
-          and platform culture.
+        <p>
+          I do not treat project management and technology as separate tracks. They work together. That combination is
+          especially useful when a role needs someone who can talk with both technical and nontechnical stakeholders,
+          turn organizational needs into workable solutions, and stay involved from planning through implementation.
         </p>
       </div>
     </div>

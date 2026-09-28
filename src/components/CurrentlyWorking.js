@@ -11,8 +11,10 @@ const CurrentlyWorking = () => (
         <div>
           <h2 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">Currently focused on</h2>
           <p className="text-slate-700 leading-relaxed text-sm md:text-base">
-            Advancing distributed systems and software engineering depth through Clemson&apos;s M.S. Computer Science program, while
-            shipping contract web work with an emphasis on TypeScript architecture, API integration, and maintainable UI systems.
+            Expanding my technical knowledge through Clemson University&apos;s M.S. in Computer Science program while
+            continuing to build and support real-world technology solutions. My experience across project management, web
+            development, and systems support has led me toward roles that connect technical implementation with business
+            and organizational needs.
           </p>
         </div>
       </div>

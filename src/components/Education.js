@@ -25,13 +25,13 @@ const Education = () => {
       degree: "Master of Science in Computer Science",
       school: "Clemson University",
       location: "Clemson, South Carolina",
-      period: "Jan 2025 — Present",
+      period: "January 2025 - Present",
     },
     {
       degree: "Bachelor of Science in Construction Management",
       school: "Kent State University",
       location: "Kent, Ohio",
-      period: "Aug 2020 — Apr 2024",
+      period: "August 2020 - April 2024",
     },
   ];
 
@@ -39,7 +39,9 @@ const Education = () => {
     <section id="education" className="section-wrap bg-slate-50/50 border-y border-slate-100">
       <div className="section-inner max-w-5xl">
         <h2 className="section-title">Education</h2>
-        <p className="section-subtitle">Formal training complementing production engineering experience.</p>
+        <p className="section-subtitle">
+          Construction management training alongside graduate study in computer science.
+        </p>
         <div className="space-y-4 max-w-3xl">
           {education.map((edu) => (
             <EducationItem key={edu.degree} {...edu} />

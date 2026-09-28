@@ -8,9 +8,9 @@ const LINKEDIN_HREF = "https://www.linkedin.com/in/john-russell-61a530220";
 
 const nav = [
   { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
 ];
 

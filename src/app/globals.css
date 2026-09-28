@@ -51,7 +51,7 @@ main {
 
 @layer components {
   .section-wrap {
-    @apply relative py-20 md:py-28 px-6;
+    @apply relative py-20 md:py-28 px-6 scroll-mt-20;
   }
   .section-inner {
     @apply max-w-5xl mx-auto relative z-10;
