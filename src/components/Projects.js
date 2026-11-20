@@ -17,24 +17,36 @@ const StoryBlock = ({ label, children }) => (
   </p>
 );
 
+const ProjectMedia = ({ project }) => {
+  const href = project.live || project.github;
+  const image = (
+    <Image
+      src={project.image}
+      alt={project.title}
+      fill
+      className={`group-hover:scale-[1.03] transition-transform duration-500 ${project.imageContain ? "object-contain p-6" : "object-cover"} ${project.imageClassName || ""}`}
+      sizes="(max-width: 768px) 100vw, 42vw"
+    />
+  );
+  const className =
+    "relative md:col-span-5 aspect-[16/10] md:aspect-auto md:min-h-[320px] bg-gradient-to-br from-slate-100 to-slate-50 overflow-hidden";
+
+  if (href) {
+    return (
+      <Link href={href} target="_blank" rel="noopener noreferrer" className={`${className} block`}>
+        {image}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity md:hidden" />
+      </Link>
+    );
+  }
+
+  return <div className={className}>{image}</div>;
+};
+
 const ProjectCard = ({ project }) => (
   <article className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-lg hover:shadow-2xl hover:border-blue-200/90 hover:-translate-y-0.5 transition-all duration-300 group">
     <div className="md:grid md:grid-cols-12 md:gap-0">
-      <Link
-        href={project.live || project.github || "#"}
-        target={project.live || project.github ? "_blank" : undefined}
-        rel={project.live || project.github ? "noopener noreferrer" : undefined}
-        className="relative md:col-span-5 aspect-[16/10] md:aspect-auto md:min-h-[320px] bg-gradient-to-br from-slate-100 to-slate-50 block overflow-hidden"
-      >
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className={`group-hover:scale-[1.03] transition-transform duration-500 ${project.imageContain ? "object-contain p-6" : "object-cover"} ${project.imageClassName || ""}`}
-          sizes="(max-width: 768px) 100vw, 42vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity md:hidden" />
-      </Link>
+      <ProjectMedia project={project} />
 
       <div className="md:col-span-7 p-8 md:p-10 flex flex-col">
         <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -117,7 +129,7 @@ const projects = [
     ],
     image: "/degroff-logo.png",
     imageContain: true,
-    live: "https://pitotshields.com/",
+    live: null,
     github: null,
   },
   {
