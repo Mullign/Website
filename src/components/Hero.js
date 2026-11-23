@@ -117,7 +117,7 @@ const Hero = () => {
         </p>
 
         <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-3 max-w-xl mx-auto mb-6 sm:mb-7">
-          <HeroCta href="#work" variant="primary">
+          <HeroCta href="#projects" variant="primary">
             View My Work
             <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
           </HeroCta>

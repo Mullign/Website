@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeaturedProject from "@/components/FeaturedProject";
 import Projects from "@/components/Projects";
 import CurrentlyWorking from "@/components/CurrentlyWorking";
 import GitHubSection from "@/components/GitHubSection";
@@ -16,7 +15,6 @@ const Portfolio = () => (
     <Hero />
     <CurrentlyWorking />
     <Experience />
-    <FeaturedProject />
     <Projects />
     <About />
     <Education />
