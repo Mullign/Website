@@ -129,7 +129,7 @@ const projects = [
     ],
     image: "/degroff-logo.png",
     imageContain: true,
-    live: null,
+    live: "https://pitotshields.com/",
     github: null,
   },
   {
